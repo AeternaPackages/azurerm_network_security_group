@@ -35,7 +35,7 @@ EOT
     name                = string
     resource_group_name = string
     tags                = optional(map(string))
-    security_rule = optional(object({
+    security_rule = optional(list(object({
       access                                     = string
       description                                = optional(string)
       destination_address_prefix                 = optional(string)
@@ -52,7 +52,7 @@ EOT
       source_application_security_group_ids      = optional(set(string))
       source_port_range                          = optional(string)
       source_port_ranges                         = optional(set(string))
-    }))
+    })))
     network_security_rules = optional(map(object({
       access                                     = string
       direction                                  = string
