@@ -5,7 +5,7 @@ locals {
     for k1, v1 in var.network_security_groups : {
       for k2, v2 in coalesce(v1.network_security_rules, {}) :
       "${k1}/${k2}" => merge(v2, {
-        network_security_group_name = module.network_security_groups.network_security_groups["${k1}"].name
+        network_security_group_name = module.network_security_groups.network_security_groups_name["${k1}"]
       })
     }
   ]...)
