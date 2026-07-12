@@ -1,4 +1,9 @@
 # --- azurerm_network_security_group ---
+output "network_security_groups_id" {
+  description = "Map of id values across all network_security_groups, keyed the same as var.network_security_groups"
+  value       = module.network_security_groups.network_security_groups_id
+}
+
 output "network_security_groups_location" {
   description = "Map of location values across all network_security_groups, keyed the same as var.network_security_groups"
   value       = module.network_security_groups.network_security_groups_location
@@ -25,6 +30,11 @@ output "network_security_groups_tags" {
 }
 
 # --- azurerm_network_security_rule ---
+output "network_security_rules_id" {
+  description = "Map of id values across all network_security_rules, keyed the same as var.network_security_rules"
+  value       = module.network_security_rules.network_security_rules_id
+}
+
 output "network_security_rules_access" {
   description = "Map of access values across all network_security_rules, keyed the same as var.network_security_rules"
   value       = module.network_security_rules.network_security_rules_access
