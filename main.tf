@@ -12,12 +12,12 @@ locals {
 }
 
 module "network_security_groups" {
-  source                  = "git::https://github.com/AeternaModules/azurerm_network_security_group.git?ref=v5.0.0"
+  source                  = "git::https://github.com/AeternaModules/azurerm_network_security_group.git?ref=v5.0.1"
   network_security_groups = local.network_security_groups
 }
 
 module "network_security_rules" {
-  source                 = "git::https://github.com/AeternaModules/azurerm_network_security_rule.git?ref=v5.0.0"
+  source                 = "git::https://github.com/AeternaModules/azurerm_network_security_rule.git?ref=v5.0.1"
   network_security_rules = local.network_security_rules
   depends_on             = [module.network_security_groups]
 }
